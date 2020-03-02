@@ -79,6 +79,7 @@ python ScatLay.py -filename demo.csv -size 0.03
 Finally, you can combine the various customisations applied above to be as such:
 ```
 python ScatLay.py -filename demo.csv -samples 2,4,6,8 -size 0.03
+```
 
 ### Saving the output
 The csv file containing names of differentially expressed genes will be automatically generated after each run. It is saved in the same directory as ```ScatLay.py```. To save individual scatter plots, simply click on the save icon located below each plot.
