@@ -36,7 +36,7 @@ python ScatterOverlay.py -filename demo.csv
 ```
 
 You should see these plots being displayed below. Overlapping regions are denoted in orange while non-overlapping points are identified as differential genes.
-![alt text](https://github.com/SnowMelody/ScatterOverlay/blob/master/scatter.png)
+![alt text](https://github.com/buithuytien/ScatLay/blob/master/scatter.png)
 
 
 ### Gene expression data format
