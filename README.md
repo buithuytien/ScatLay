@@ -66,19 +66,19 @@ python ScatLay.py --help
 Name your input gene expression data as ```data.csv``` and place it in the ```ScatterOverlay-master``` folder. By default, the first 4 samples in the data are used for the plots. If you would like to read in different ```samples``` from the file (e.g. columns 1,2,3,4), run the following: </br>
 
 ```
-python ScatLay.py -filename demo.csv -samples 1,2,3,4
+python ScatLay.py -columns 1,2,3,4 -filename demo.csv
 ```
 
 ### Marker size
 The default marker size used for the plots is 0.0125. Varying the marker size directly affects number of overlapping/non-overlapping points. To modify the ```size``` used (e.g. 0.03), run the following:
 
 ```
-python ScatLay.py -filename demo.csv -size 0.03
+python ScatLay.py -size 0.03 -filename demo.csv
 ```
 
 Finally, you can combine the various customisations applied above to be as such:
 ```
-python ScatLay.py -filename demo.csv -samples 2,4,6,8 -size 0.03
+python ScatLay.py -columns 2,4,6,8 -size 0.03 -filename demo.csv
 ```
 
 ### Saving the output
