@@ -42,6 +42,8 @@ You should see these plots being displayed below. Overlapping regions are denote
 ### Gene expression data format
 The input gene expression data is expected in comma-separated values ```csv``` format, where rows are *genes* and columns are *samples*. **IMPORTANT:** Replicates of the same conditions must be placed next to each other. The demo file ```demo.csv``` shows the expected format.
 
+The demo.csv file is an excerpt of the gene expression data taken from [Gene Expression Omnibus database](https://www.ncbi.nlm.nih.gov/geo/) . Full data can be accessed via accession number [GSE71562](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71562) . The demo.csv file include replicate b and c (namely rep1 and rep2) for the 2 conditions 0 minute and 10 minute (namely cond1 and con2)
+
 <details>
 <summary> Example </summary>
 
