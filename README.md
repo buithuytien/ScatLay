@@ -40,17 +40,17 @@ You should see these plots being displayed below. Overlapping regions are denote
 
 
 ### Gene expression data format
-The input gene expression data is expected in comma-separated values ```csv``` format, where rows are *genes* and columns are *samples*. The demo file ```demo.csv``` shows the expected format.
+The input gene expression data is expected in comma-separated values ```csv``` format, where rows are *genes* and columns are *samples*. **IMPORTANT:** Replicates of the same conditions must be placed next to each other. The demo file ```demo.csv``` shows the expected format.
 
 <details>
 <summary> Example </summary>
-  
-|       | S1  | S2  | S3  | ... |
-|-------|-----|-----|-----|-----|   
-| G1    | 2   | 7   | 3   | 2   |
-| G2    | 4   | 6   | 2   | 0   |
-| G3    | 0   | 5   | 0   | 0   |
-| ..... | 3   | 2   | 1   | 2   |
+
+|       | replicate1_condition1 | replicate2_condition1 | replicate1_condtion2 | replicate2_condition2 |
+| ----- | --------------------- | --------------------- | -------------------- | --------------------- |
+| G1    | 2                     | 7                     | 3                    | 2                     |
+| G2    | 4                     | 6                     | 2                    | 0                     |
+| G3    | 0                     | 5                     | 0                    | 0                     |
+| ..... | 3                     | 2                     | 1                    | 2                     |
 
 </details>
 
@@ -63,10 +63,10 @@ python ScatLay.py --help
 ```
 
 ### Reading the data
-Name your input gene expression data as ```data.csv``` and place it in the ```ScatterOverlay-master``` folder. By default, the first 4 samples in the data are used for the plots. If you would like to read in different ```samples``` from the file (e.g. columns 1,2,3,4), run the following: </br>
+Name your input gene expression data as ```data.csv``` and place it in the ```ScatterOverlay-master``` folder. By default, the first 4 samples in the data are used for the plots. ```-columns 1,2,3,4``` means the 2 replicates of condition 1 are in columns 1 and 2, and the 2 replicates of condition 2 are in columns 3 and 4.  If you would like to read in different ```columns``` arrangement from the file (e.g. columns 2,4,6,8), run the following: </br>
 
 ```
-python ScatLay.py -columns 1,2,3,4 -filename demo.csv
+python ScatLay.py -columns 2,4,6,8 -filename demo.csv
 ```
 
 ### Marker size
@@ -86,4 +86,3 @@ The csv file containing names of differentially expressed genes will be automati
 
 ## About
 ScatLay identify differentially expressed genes by overlaying gene expression scatter plot of 2 different conditions on top of that of 2 replicates between the same condition. The non-overlapping genes are differentially expressed genes.
-
