@@ -27,6 +27,7 @@ This ScatLay version was developed and tested on R version 4.0.0 and RStudio ver
 #### Python
 1. Install Python from https://www.python.org/downloads/
 2. Take note of your installed Python folder. For example, in my case, Python was installed in `C:\Users\BUITT\AppData\Local\Programs\Python\Python38`. In some other cases, Python can be installed in `C:\Program Files\Python3`
+![alt_text](https://github.com/buithuytien/ScatLay/blob/master/www/screenshots/00_python38_IDLE.PNG)
 
 #### Python dependencies
 1. Launch Windows Command Line:
