@@ -195,7 +195,8 @@ def runFig(df_temp, df_temp2, df_temp3, exc_common, theta):
     ax = fig.add_subplot(2,2,2); ax = scatterFig(fig, ax, df_temp3, theta, color=colorlist[2] )
     ax = fig.add_subplot(2,2,3); ax = scatterFig(fig, ax, df_temp,  theta, color=colorlist[0] )
     ax = fig.add_subplot(2,2,4); ax = overlayFig(fig, ax, df_temp, exc_common=exc_common, theta=theta)
-
+    fig.suptitle('CLOSE THIS WINDOW BEFORE RUNNING OTHER ANALYSES')
+    
     mplcursors.cursor().connect(
         "add", lambda sel: sel.annotation.set_text(df_temp["Names"][sel.target.index]))
 
@@ -205,6 +206,7 @@ def runFig(df_temp, df_temp2, df_temp3, exc_common, theta):
     mplcursors.cursor().connect(
         "add", lambda sel: sel.annotation.set_text(df_temp3["Names"][sel.target.index]))
     plt.show()
+    return()
     
 
 # EXECUTION CODE
