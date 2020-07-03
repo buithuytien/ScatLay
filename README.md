@@ -46,56 +46,54 @@ pip install numpy pandas matplotlib
 Clone Scatlay, or download the zipped file from Github and then unzip it
 
 ### Launching Scatlay
-Open the `ScatLay.R` file using RStudio and click `RunApp` button on the topright.
+Open the `ScatLay.R` file using RStudio and click `RunApp` button on the topright. </br>
  
- INSERT PICTURE HERE 01_LAUNCH
+![alt_text](https://github.com/buithuytien/ScatLay/blob/master/www/screenshots/01_launch.PNG)
 
 You're good to go! A demo file ```ecoli_expression_tpm.csv``` along with its meta data file ```ecoli_meta.csv``` has been provided containing Ecoli gene expression data (TPM normalized with no cut-off). 
 
 ### Gene expression data format
-The input gene expression data MUST BE in comma-separated values ```csv``` format, where rows are *genes* and columns are *samples*. The first column MUST contain gene names. For example:
-INSERT PICTURE FROM ABIOTRANS
+The input gene expression data MUST BE in comma-separated values ```csv``` format, where rows are *genes* and columns are *samples*. The first column MUST contain gene names. Replicates of the same column should be placed together. For example: </br>
 
-The meta data file should match column names of data file to experimental conditions should be given in two-column .csv formate. For example:
-INSERT PICTURE FROM ABIOTRANS
+![alt text](https://github.com/buithuytien/ABioTrans/blob/master/Test%20data/Eg_normalised.png)
 
-The demo.csv file is an excerpt of the gene expression data taken from [Gene Expression Omnibus database](https://www.ncbi.nlm.nih.gov/geo/) . Full data can be accessed via accession number [GSE71562](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71562) . The demo.csv file include replicate a and b (namely rep1 and rep2) for the 2 conditions 0 minute and 10 minute (namely cond1 and con2)
+The meta data file should match column names of data file to experimental conditions should be given in two-column .csv formate. For example: </br>
+![alt text](https://github.com/buithuytien/ABioTrans/blob/master/Test%20data/Eg_metadata.png)
+
+The demo.csv file is an excerpt of the gene expression data taken from [Gene Expression Omnibus database](https://www.ncbi.nlm.nih.gov/geo/) . Full data can be accessed via accession number [GSE71562](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71562) . The demo.csv file include replicate a and b for the 2 conditions 0 minute and 10 minute (namely a1 and a6 for replicate a, b1 and b6 for replicate b)
 
 <details>
 <summary> Example </summary>
 
-|       | replicate1_condition1 | replicate2_condition1 | replicate1_condtion2 | replicate2_condition2 |
-| ----- | --------------------- | --------------------- | -------------------- | --------------------- |
-| G1    | 2                     | 7                     | 3                    | 2                     |
-| G2    | 4                     | 6                     | 2                    | 0                     |
-| G3    | 0                     | 5                     | 0                    | 0                     |
-| ..... | 3                     | 2                     | 1                    | 2                     |
+|       | a1 | b1 | a6 | b6 |
+| ----- | -- | -- | -- | -- |
+| G1    | 2  | 7  | 3  | 2  |
+| G2    | 4  | 6  | 2  | 0  |
+| G3    | 0  | 5  | 0  | 0  |
+| ..... | 3  | 2  | 1  | 2  |
 
 </details>
-
-![alt text](https://github.com/buithuytien/ScatLay/blob/master/scatter.png)
-
 
 ## User guide
 Under this section, you will learn how to read in your own data and apply customisations to the scatter plots. 
 
 ### Reading the data
 * Choose an RNA-Seq data file in comma-separated value (.csv) format.
+* If you input a normalised data file, it should have gene names in rows and genotypes in columns, following the usual format of files deposited in the GEO database.
 * If you input raw data (read counts), please make sure that the first column contains gene names, and the read counts of each genotype (conditions: wildtype, mutants, replicates, etc.) are in the following columns. Each genotype column should have a column name.
   - Along with raw read counts, you can provide gene length (base pair) information in two-column .csv file, with the first column specifying gene names, which must match the gene names in raw data file, and the second column specifying gene length in base pair. Gene length file is required for normalization methods for sequencing depth and gene length: RPKM, FPKM, TPM
   - List of negative control genes (spike-in or stably expressed genes accross all samples), if available, should be contained in one-column .csv file. Negative control genes are required for Remove Unwated Variation (RUV) normalziation.
-* If you input a normalised data file, it should have gene names in rows and genotypes in columns, following the usual format of files deposited in the GEO database.
 * Finally, a metadata table matching column names of data file to experimental conditions should be given in two-column .csv formate. Metadata table is required for differential expression analysis
 * Hit `SUBMIT` button. The software automatically move on to the preprocessing and analysis tabs once the datafile is loaded.
 
-INSERT PICTURE HERE
+![alt_text](https://github.com/buithuytien/ScatLay/blob/master/www/screenshots/02_load_in.PNG)
 
 ### Preprocessing
 * Specify the cut-off expression values (same unit to your input data file - either raw read counts or normalized expression), and the minimum number of columns (samples) whose expression is above threshold value. 
 * Normalization methods are available depending on your input of supporting data files (gene length and negative control genes). 
 * Relative Log Expression (RLE) plot of raw and normalized data are displayed to compare the effects of normalziation
 
-INSERT PICTURE HERE
+![alt_text](https://github.com/buithuytien/ScatLay/blob/master/www/screenshots/03_preprocessing.PNG)
 
 ### ScatLay
 * ScatLay finds differentially expressed genes using 2 criteria:
@@ -109,13 +107,13 @@ INSERT PICTURE HERE
   - Bottom left panel: Scatter plot between 2 condition
   - Bottom right panel: Overlaid between-condition scatter ontop of between-replicate scatter. Differentially expressed genes are highlighted in GREEN
 
-INSERT PICTURE HERE  
+![alt_text](https://github.com/buithuytien/ScatLay/blob/master/www/screenshots/04_scatters.PNG)
  
 * Table of Differentially Expressed genes:
   - Genes that are non-overlapping in the overlaid scatters, abd satisfy the p-value cut-off condition are listed in the `DE Gene Table`
   - You can retrieve (.csv format) this list of DE genes by the `doanload` button on the side bar
 
-INSERT PICTURE HERE
+![alt_text](https://github.com/buithuytien/ScatLay/blob/master/www/screenshots/05_DEtable.PNG)
 
 ## About
 ScatLay identify differentially expressed genes by overlaying gene expression scatter plot of 2 different conditions on top of that of 2 replicates between the same condition. The non-overlapping genes are differentially expressed genes.
