@@ -1,4 +1,4 @@
-Sys.setenv(RETICULATE_PYTHON = "C:\\Users\\BUITT\\AppData\\Local\\Programs\\Python\\Python38")
+# Sys.setenv(RETICULATE_PYTHON = "C:\\Users\\BUITT\\AppData\\Local\\Programs\\Python\\Python38")
 
 # sync working directory with current file
 wd <- dirname(rstudioapi::getActiveDocumentContext()$path)  #set wd as the current folder
