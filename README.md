@@ -21,7 +21,7 @@ The code runs in Python 3 and RStudio environment. You will need to install Pyth
 
 #### R and RStudio
 1. Install R from https://cran.r-project.org/
-2. Install Rstudio from https://www.rstudio.com/
+2. Install Rstudio from https://www.rstudio.com/ </br>
 This ScatLay version was developed and tested on R version 4.0.0 and RStudio version 1.3.959, Windows OS
 
 #### Python
