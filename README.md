@@ -1,6 +1,6 @@
-<h1><p align="center"> ScatterOverlay </p></h1>
+<h1><p align="center"> ScatLay </p></h1>
 
-ScatterOverlay identifies differential genes from gene expression data by using the overlap of 2 scatter plots. Plots are generated in log10 scale. The source code can be interacted via command-line interface.
+ScatLay identifies differential genes from gene expression data by using the overlap of 2 scatter plots. Plots are generated in log10 scale. The source code can be interacted via command-line interface.
 
 ## Contents 
 - [Getting started](#getting-started)</br>
