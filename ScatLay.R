@@ -22,7 +22,6 @@ if(length(find.package(package = 'shiny',quiet = T))>0){
   library(shiny)
 }
 
-
 if(length(find.package(package = 'shinythemes',quiet = T))>0){
   library(shinythemes)
 }else{
@@ -91,8 +90,8 @@ ui <- navbarPage(id = "navbar",
              actionButton("submit_input","Submit")
            ),
            mainPanel(
-             h3('Welcome to ScatterOverLay --'),
-             h3('Finding Differentially Expressed genes by Overlaying Scatters')
+             h3('Welcome to ScatLay --'),
+             h3('Finding Differentially Expressed genes by overLAYing SCATters')
              # img(src="scatlay_logo.png",
              #     width = 694*2,height = 138*2)
            )
@@ -685,7 +684,7 @@ server <- function(input,output,session){
       exc_common0 <- union(exc1_names, exc2_names)
     } else if(overlay_option == "First Replicate"){
       exc_common0 <- exc1_names
-    } else if(overlay_option == "First Replicate"){
+    } else if(overlay_option == "Second Replicate"){
       exc_common0 <- exc2_names
     }
     
